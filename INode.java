@@ -30,6 +30,8 @@ public interface INode<T> {
 
 	public boolean findNode(T key);
 
+	public void insertNumberAfterGivenNodeKey(T newKey, T key);
+
 	public void printAllValues();
 
 }
