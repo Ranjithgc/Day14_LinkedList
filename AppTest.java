@@ -69,5 +69,13 @@ public class AppTest {
 		linkedList.insertNumberAfterGivenNodeKey(b, a);
 		Assert.assertEquals(true, linkedList.findNode(b));
 	}
-	
+
+	/** 
+	 * ability to delete the first element 
+	*/
+	@Test
+	public void deletefirstElement() {
+		MyLinkedList<Integer> myList = new MyLinkedList<Integer>();
+		myList.pop();
+	}	
 }
