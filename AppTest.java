@@ -40,10 +40,10 @@ public class AppTest {
         		 		  myList.getTail().equals(myFirstNode);
          	Assert.assertEquals(10, 10);
     	}
-	
- 	@Test
-    	public void insert3NumbersInToMyLinkedList() {
-    		Node<Integer> myFirstNode = new Node<Integer>(56);
+
+	@Test
+         public void insert3NumbersInToMyLinkedList() {
+    	 	Node<Integer> myFirstNode = new Node<Integer>(56);
          	Node<Integer> mySecondNode = new Node<Integer>(30);
          	Node<Integer> myThirdNode = new Node<Integer>(70);
          	MyLinkedList<Integer> myList = new MyLinkedList<Integer>();
@@ -54,17 +54,9 @@ public class AppTest {
          	boolean result = myList.getHead().equals(myThirdNode) &&
         		 		  myList.getHead().equals(mySecondNode) && 
         		 		  myList.getTail().equals(myFirstNode);
-        	Assert.assertEquals(10, 10);
+         	Assert.assertEquals(10, 10);
     	}    
-	@Test
-	public void returnTrueWhenFindNode() {
-		LinkedList<Integer> linkedList = new LinkedList<Integer>();
-		Integer a = 56, b = 30, c = 70;
-		linkedList.append(a);
-		linkedList.append(c);
-		linkedList.insertInBetween(b, a);
-		Assert.assertEquals(true, linkedList.findNode(b));
-	}
+
 	/**
 	* ability to insert element after given value node key
 	*/
@@ -78,17 +70,15 @@ public class AppTest {
 		Assert.assertEquals(true, linkedList.findNode(b));
 	}
 
-	/**
-	* ability to delete element from LL sequence
+	/** 
+	 * ability to delete the first element 
 	*/
 	@Test
-	public void deleteGivenNode() {
-		LinkedList<Integer> linkedList = new LinkedList<Integer>();
-		Integer a = 56, b = 30, c = 70;
-		linkedList.append(a);
-		linkedList.append(c);
-		linkedList.insertNumberAfterGivenNodeKey(b, a);
-		linkedList.deleteNode(b);
-		Assert.assertEquals(false, linkedList.findNode(b));
+	public void deletefirstElement() {
+		MyLinkedList<Integer> myList = new MyLinkedList<Integer>();
+		Integer a = 56, b = 30, c = 70 ;
+		myList.pop();
 	}
+}
+
 }

@@ -20,22 +20,18 @@ public interface INode<T> {
 	
 	public void add(T newNode);
 
-	public void append(T newNode);
-	
+	public void append(T key);
+
 	public void insertInBetween(T newKey, T key);
 
 	public void pop();
-	
-	public void popLastElement();
-	
-	public boolean findNode(T value);
 
-	public void insertNumberAfterGivenNodeKey(T newKey, T key); 
-	
-        public void deleteNode(T key); 
+ 	public void popLastElement();
 
-	public void addLinkedList(T key);
+	public boolean findNode(T key);
 
-	private int sort(Node<T> temp, Node<T> newNode);
+	public void insertNumberAfterGivenNodeKey(T newKey, T key);
+
+	public void printAllValues();
 
 }
