@@ -20,6 +20,8 @@ public interface INode<T> {
 	
 	public void add(T newNode);
 
+	public void append(T key);
+
 	public void printAllValues();
 
 }
