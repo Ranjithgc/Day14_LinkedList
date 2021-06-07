@@ -145,6 +145,41 @@ public class MyLinkedList<T> implements INode {
         	}
     	}
 
+	/**
+         * uc10:
+        */
+        public void addLinkedList(T data) {
+        	Node<T> newNode = new Node<T>(data);
+        	if(head == null && tail == null) {
+            		head = newNode;
+            		tail = newNode;
+        	} else {
+            		Node<T> temp = null, prev = null;
+            		temp = head;
+            		while(temp != null) {
+                		if(sort(temp,newNode) > 0) {
+                    		break;
+                	}
+                	prev = temp;
+                	temp = temp.getNext();
+            	}
+            	if(temp == head) {
+                	newNode.setNext(temp);
+                	head = newNode;
+            	}
+            	else if(temp == null) {
+                	prev.setNext(newNode);
+                	tail = newNode;
+            	} else {
+                	prev.setNext(newNode);
+                	newNode.setNext(temp);
+            	}
+          }
+    }
+
+      private int sort(Node<T> temp, Node<T> newNode) {
+            return ((Comparable) temp.getData()).compareTo(newNode.getData());
+      }
 	public void printAllValues() {
 		StringBuilder str = new StringBuilder("The Values Are: ");
 		INode tempNode = head;
