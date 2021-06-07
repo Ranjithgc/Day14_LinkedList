@@ -32,6 +32,8 @@ public interface INode<T> {
 
 	public void insertNumberAfterGivenNodeKey(T newKey, T key);
 
+	public void deleteNode(T key);
+
 	public void printAllValues();
 
 }
