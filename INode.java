@@ -26,6 +26,8 @@ public interface INode<T> {
 
 	public void pop();
 
+ 	public void popLastElement();
+
 	public void printAllValues();
 
 }
