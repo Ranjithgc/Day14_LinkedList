@@ -79,6 +79,18 @@ public class AppTest {
 		Integer a = 56, b = 30, c = 70 ;
 		myList.pop();
 	}
-}
-
+	
+	/**	
+	* ability to delete element from LL sequence
+	*/
+	@Test
+	public void deleteGivenNode() {
+		LinkedList<Integer> linkedList = new LinkedList<Integer>();
+		Integer a = 56, b = 30, c = 70;
+		linkedList.append(a);
+		linkedList.append(c);
+		linkedList.insertNumberAfterGivenNodeKey(b, a);
+		linkedList.deleteNode(b);
+		Assert.assertEquals(false, linkedList.findNode(b));
+	}
 }
