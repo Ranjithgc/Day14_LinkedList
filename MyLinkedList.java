@@ -56,6 +56,24 @@ public class MyLinkedList<T> implements INode {
         	}
     	}
 
+	/**
+         * uc4 : ability to insert an element in between
+         */
+        public void insertInBetween(T newKey, T key) {
+        	Node<T> node = head;
+        	Node<T> temp;
+        	Node<T> newNode = new Node<T>(newKey);
+        	while(node != null) {
+            		if(node.getData() == key) {
+                		break;
+            		}
+        		node = node.getNext();
+        	}
+        	temp = node.getNext();
+        	node.setNext(newNode);
+        	newNode.setNext(temp);
+    	}
+
 	public void printAllValues() {
 		StringBuilder str = new StringBuilder("The Values Are: ");
 		INode tempNode = head;
