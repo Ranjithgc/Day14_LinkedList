@@ -40,5 +40,21 @@ public class AppTest {
         		 		  myList.getTail().equals(myFirstNode);
          	Assert.assertEquals(10, 10);
     	}
+
+	@Test
+         public void insert3NumbersInToMyLinkedList() {
+    	 	Node<Integer> myFirstNode = new Node<Integer>(56);
+         	Node<Integer> mySecondNode = new Node<Integer>(30);
+         	Node<Integer> myThirdNode = new Node<Integer>(70);
+         	MyLinkedList<Integer> myList = new MyLinkedList<Integer>();
+         	myList.add(myFirstNode);
+         	myList.add(mySecondNode);
+         	myList.add(myThirdNode);
+         	myList.printAllValues();
+         	boolean result = myList.getHead().equals(myThirdNode) &&
+        		 		  myList.getHead().equals(mySecondNode) && 
+        		 		  myList.getTail().equals(myFirstNode);
+         	Assert.assertEquals(10, 10);
+    	}    
 	
 }
