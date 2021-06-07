@@ -83,6 +83,18 @@ public class MyLinkedList<T> implements INode {
         	node.setNext(null);
     	}
 
+	/**
+         * uc6 : ability to delete the last element from the given sequence.
+        */
+        public void popLastElement() {
+        	Node<T> node = head;
+        	while(node.getNext() != tail) {
+            		node = node.getNext();
+        	}
+        	node.setNext(null);
+        	tail = node;
+    	}
+
 	public void printAllValues() {
 		StringBuilder str = new StringBuilder("The Values Are: ");
 		INode tempNode = head;
