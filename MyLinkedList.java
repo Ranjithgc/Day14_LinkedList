@@ -42,6 +42,20 @@ public class MyLinkedList<T> implements INode {
 		}
 	}
 
+	/**
+         * uc3 : Ability to create Linked List by appending 30and 70 to 56
+        */
+        public void append(T data) {
+        	Node<T> newNode = new Node<T>(data);
+       		if (head == null && tail == null) {
+            		head = newNode;
+            		tail = newNode;
+        	} else {
+            		tail.setNext(newNode);
+            		tail = newNode;
+        	}
+    	}
+
 	public void printAllValues() {
 		StringBuilder str = new StringBuilder("The Values Are: ");
 		INode tempNode = head;
