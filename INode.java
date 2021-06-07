@@ -28,6 +28,8 @@ public interface INode<T> {
 
  	public void popLastElement();
 
+	public boolean findNode(T key);
+
 	public void printAllValues();
 
 }
