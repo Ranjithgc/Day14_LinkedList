@@ -117,12 +117,32 @@ public class MyLinkedList<T> implements INode {
         	Node<T> newNode = new Node<T>(newKey);
         	while (node != null) {
             		if (node.getData() == key)
-                	break;
-            		node = node.getNext();
+                		break;
+            			node = node.getNext();
         	}
         	temp = node.getNext();
         	node.setNext(newNode);
         	newNode.setNext(temp);
+    	}
+
+	/**
+         * uc9: ability to delete element from linked list sequence
+        */
+        public void deleteNode(T key) {
+        	Node<T> node = head;
+        	Node<T> prev = null;
+        	while(node != null) {
+            		if(node.getData() == key)
+                		break;
+            	prev = node;
+            	node = node.getNext();
+        	}
+        	if(prev == null) {
+            		head = head.getNext();
+        	} else {
+            		prev.setNext(node.getNext());
+            		node.setNext(null);
+        	}
     	}
 
 	public void printAllValues() {
