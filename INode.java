@@ -24,6 +24,8 @@ public interface INode<T> {
 
 	public void insertInBetween(T newKey, T key);
 
+	public void pop();
+
 	public void printAllValues();
 
 }
