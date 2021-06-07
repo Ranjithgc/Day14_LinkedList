@@ -74,6 +74,15 @@ public class MyLinkedList<T> implements INode {
         	newNode.setNext(temp);
     	}
 
+	/**
+         * uc5 : ability to delete the first element
+        */
+        public void pop() {
+        	Node<T> node = head;
+        	head = node.getNext();
+        	node.setNext(null);
+    	}
+
 	public void printAllValues() {
 		StringBuilder str = new StringBuilder("The Values Are: ");
 		INode tempNode = head;
