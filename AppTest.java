@@ -76,6 +76,9 @@ public class AppTest {
 	@Test
 	public void deletefirstElement() {
 		MyLinkedList<Integer> myList = new MyLinkedList<Integer>();
+		Integer a = 56, b = 30, c = 70 ;
 		myList.pop();
-	}	
+	}
+}
+
 }
