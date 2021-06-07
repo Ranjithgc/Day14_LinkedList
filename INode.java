@@ -34,6 +34,10 @@ public interface INode<T> {
 
 	public void deleteNode(T key);
 
+	public add LinkedList(T key);
+
+	private T sort(Node<T> temp, Node<T> newNode)	
+
 	public void printAllValues();
 
 }
