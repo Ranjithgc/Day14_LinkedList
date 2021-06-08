@@ -57,40 +57,121 @@ public class AppTest {
          	Assert.assertEquals(10, 10);
     	}    
 
-	/**
-	* ability to insert element after given value node key
-	*/
 	@Test
-	public void insertNumberAfterGivenValue() {
-		LinkedList<Integer> linkedList = new LinkedList<Integer>();
-		Integer a = 56, b = 30, c = 70 ;
-		linkedList.append(a);
-		linkedList.append(c);
-		linkedList.insertNumberAfterGivenNodeKey(b, a);
-		Assert.assertEquals(true, linkedList.findNode(b));
-	}
+        public void given3NumbersWhenInsertingSecondInBetweenShouldPassLinkedListResult(){
+        	Node<Integer> MyFirstNode=new Node<>(56);
+        	Node<Integer> MySecondNode=new Node<>(30);
+        	Node<Integer> MyThirdNode=new Node<>(70);
+        	MyLinkedList linkedList=new MyLinkedList();
+        	linkedList.add(MyFirstNode);
+        	linkedList.append(MyThirdNode);
+        	linkedList.insert(MyFirstNode,MySecondNode);
+        	boolean result=linkedList.head.equals(MyFirstNode)&&
+                linkedList.head.getNext().equals(MySecondNode)&&
+                linkedList.tail.equals(MyThirdNode);
 
-	/** 
-	 * ability to delete the first element 
-	*/
-	@Test
-	public void deletefirstElement() {
-		MyLinkedList<Integer> myList = new MyLinkedList<Integer>();
-		Integer a = 56, b = 30, c = 70 ;
-		myList.pop();
+        	Assert.assertTrue(result);
+        	linkedList.PrintAllValues();
+       }
+
+	// Deleting First Element
+       @Test
+       public void given3NumberswhenDeletingFirstElementShouldPassTheLinkedList(){
+        	Node<Integer> MyFirstNode=new Node<>(56);
+        	Node<Integer> MySecondNode=new Node<>(30);
+        	Node<Integer> MyThirdNode=new Node<>(70);
+        	MyLinkedList linkedList=new MyLinkedList();
+        	linkedList.add(MyFirstNode);
+        	linkedList.append(MySecondNode);
+        	linkedList.append(MyThirdNode);
+        	INode<Integer> poppedNode=linkedList.pop();
+        	linkedList.PrintMyNodes();
+        	Assert.assertEquals(MyFirstNode,poppedNode);
 	}
-	
-	/**	
-	* ability to delete element from LL sequence
-	*/
+    
+	// Deleting Last Element
 	@Test
-	public void deleteGivenNode() {
-		LinkedList<Integer> linkedList = new LinkedList<Integer>();
-		Integer a = 56, b = 30, c = 70;
-		linkedList.append(a);
-		linkedList.append(c);
-		linkedList.insertNumberAfterGivenNodeKey(b, a);
-		linkedList.deleteNode(b);
-		Assert.assertEquals(false, linkedList.findNode(b));
-	}
+    	public void given3NumbersDeletingLastElementShouldPassTheLinkedList() {
+        	Node<Integer> MyFirstNode=new Node<>(56);
+        	Node<Integer> MySecondNode=new Node<>(30);
+        	Node<Integer> MyThirdNode=new Node<>(70);
+        	MyLinkedList linkedList=new MyLinkedList();
+        	linkedList.add(MyFirstNode);
+        	linkedList.append(MySecondNode);
+        	linkedList.append(MyThirdNode);
+        	INode<Integer> popLastNode=linkedList.popLast();
+        	linkedList.PrintMyNodes();
+        	Assert.assertEquals(MyThirdNode,popLastNode);
+    	}
+    	
+	// Searching the element 
+	@Test
+    	public void given3numbersWhenSearchingShouldPassTheLinkedList() {
+        	Node<Integer> MyFirstNode=new Node<>(56);
+        	Node<Integer> MySecondNode=new Node<>(30);
+        	Node<Integer> MyThirdNode=new Node<>(70);
+        	MyLinkedList linkedList=new MyLinkedList();
+        	linkedList.add(MyFirstNode);
+        	linkedList.append(MySecondNode);
+        	linkedList.append(MyThirdNode);
+        	INode<Integer> searchNode=linkedList.search(MySecondNode);
+        	Assert.assertEquals(MySecondNode,searchNode);
+    	}
+    	
+	// Inserting an element in middle of linked list 
+	@Test
+    	public void given4NumbersWhenInsertingInMiddleShouldPassTheLinkedList(){
+        	Node<Integer> myFirstNode=new Node<>(56);
+        	Node<Integer> mySecondNode=new Node<>(30);
+        	Node<Integer> myThirdNode=new Node<>(40);
+        	Node<Integer> myFourthNode=new Node<>(70);
+        	MyLinkedList linkedList=new MyLinkedList();
+        	linkedList.add(myFirstNode);
+        	linkedList.append(mySecondNode);
+        	linkedList.append(myFourthNode);
+        	linkedList.inserInmiddle(mySecondNode,myThirdNode);
+        	boolean result=linkedList.head.equals(myFirstNode)&&linkedList.head.getNext				().equals(mySecondNode)&&
+                linkedList.head.getNext().getNext().equals(myThirdNode)&&
+                linkedList.tail.equals(myFourthNode);
+       	 	Assert.assertTrue(result);
+        	linkedList.PrintAllValues();
+    	}
+    	
+	// Delete an elment in the middle of linked list
+	@Test
+    	public void given4NumbersWhenDeletingMiddleShuoldPassTheresult(){
+        	Node<Integer> myFirstNode=new Node<>(56);
+        	Node<Integer> mySecondNode=new Node<>(30);
+        	Node<Integer> myThirdNode=new Node<>(40);
+        	Node<Integer> myFourthNode=new Node<>(70);
+        	MyLinkedList linkedList=new MyLinkedList();
+        	linkedList.add(myFirstNode);
+        	linkedList.append(mySecondNode);
+        	linkedList.append(myThirdNode);
+        	linkedList.append(myFourthNode);
+        	linkedList.deleteInMiddle(myThirdNode,mySecondNode);
+        	boolean result=linkedList.head.equals(myFirstNode)&&
+                	       linkedList.head.getNext().equals(mySecondNode);
+        	linkedList.tail.equals(myFourthNode);
+        	Assert.assertTrue(result);
+        	linkedList.PrintAllValues();
+    	}
+
+	// Adding Linked List elements in Ascending order
+    	@Test
+    	public void givenFourNumbers_WhenAddedInLinkedList_ShouldAddedInAscendingOrder() {
+        	MyLinkedList<Integer> linkedList = new MyLinkedList<>();
+        	Node<Integer> myFirstNode = new Node<>(56);
+        	Node<Integer> mySecondNode = new Node<>(30);
+        	Node<Integer> myThirdNode = new Node<>(40);
+        	Node<Integer> myFourthNode = new Node<>(70);
+        	linkedList.addInAscendingOrder(myFirstNode);
+        	linkedList.addInAscendingOrder(mySecondNode);
+        	linkedList.addInAscendingOrder(myThirdNode);
+        	linkedList.addInAscendingOrder(myFourthNode);
+        	boolean result = linkedList.head.equals(mySecondNode) &&
+                linkedList.head.getNext().equals(myThirdNode) &&linkedList.head.getNext				().getNext().equals(myFirstNode)
+                &&linkedList.head.getNext().getNext().getNext().equals(myFourthNode);
+        	Assert.assertTrue(result);
+       }
 }
